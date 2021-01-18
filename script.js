@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 // This line of code is gonna give you the whole html content stored inside the html element with the 'message' class name.
 console.log(document.querySelector('.message'));
 
@@ -14,3 +15,12 @@ document.querySelector('.score').textContent = 10;
 
 // For input values we rather use value attribute(No usage of textContent attribute.)
 document.querySelector('.guess').value = 15;
+*/
+
+document.querySelector('.check').addEventListener('click', function () {
+  const guess = Number(document.querySelector('.guess').value);
+
+  if (!guess) {
+    document.querySelector('.message').textContent = 'No Number!';
+  }
+});
