@@ -32,6 +32,7 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // When player wins!
   else if (secretNumber === guess) {
+    // Making the respective changes in the textcontent, number, background-color and text-width as soon as the player wins the game.
     document.querySelector('.message').textContent = 'Correct Number!';
 
     document.querySelector('.number').textContent = secretNumber;
@@ -41,6 +42,7 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').style.width = '30rem';
 
     if (highscore < score) {
+      // Replace the highscore content with the player score only if it's higher than the current score.
       highscore = score;
       document.querySelector('.highscore').textContent = highscore;
     }
@@ -48,6 +50,7 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // When the number is too high!
   else if (secretNumber !== guess) {
+    // As long as the player makes the wrong mistakes, the score is gonna decrease by one point and that score is gonna render on the screen.
     if (score > 1) {
       document.querySelector('.message').textContent =
         secretNumber < guess ? 'Too high!' : 'Too low!';
@@ -73,6 +76,7 @@ document.querySelector('.check').addEventListener('click', function () {
 });
 
 document.querySelector('.again').addEventListener('click', function () {
+  // Restore back to the original phase once the Again button is clicked.
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
 
